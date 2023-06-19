@@ -20,7 +20,14 @@ Navigeer door de vragen, het zijn er 4.
 
 ## Opdracht
 
-In deze applicatie wordt de state op een wat onhandige manier gemanaged, er wordt gebruik gemaakt van prop drilling maar ook van function passing. Pas de applicatie zo aan dat er geen gebruik meer wordt gemaakt van prop drilling en function passing en werk hier twee varianten van uit:
+In deze applicatie wordt de state op een wat onhandige manier gemanaged, er wordt gebruik gemaakt van prop drilling maar ook van function passing en conditional rendering. 
+
+Pas de applicatie zo aan dat:
+* er geen gebruik meer wordt gemaakt van prop drilling 
+* er geen gebruik meer wordt gemaakt van function passing
+* de code van de conditional rendering in QuestionNavigation robuuster gemaakt wordt, zonder if-else. 
+
+Werk twee varianten uit van een andere state management oplossing:
 1. Gebruik Composition.
 2. Gebruik de Context API.
 
