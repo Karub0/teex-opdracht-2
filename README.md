@@ -45,7 +45,7 @@ Front-end
 
 ### Container Diagram
 
-## Component Diagram
+### Component Diagram
 
 ## Deployment
 
