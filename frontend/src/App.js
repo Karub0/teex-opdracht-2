@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useEffect, useState} from "react";
-import QuestionNavigation from "./components/QuestionNavigation";
+import Navigator from "./components/Navigator";
 import fetchQuestion from "./restGateway/restGateway";
 import OpenQuestion from "./components/OpenQuestion";
 import AppTopBar from "./components/AppTopBar";
@@ -31,7 +31,7 @@ function App() {
             <AppTopBar barTitle="ANSIE"/>
             <div className="box">
                 <OpenQuestion key={question.id} question={question}/>
-                <QuestionNavigation currentQuestionId={question.id} next={next} previous={previous}/>
+                <Navigator currentQuestionId={question.id} next={next} previous={previous}/>
             </div>
         </div>
     );

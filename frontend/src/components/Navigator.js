@@ -1,6 +1,6 @@
 import NavigationButton from "./NavigationButton";
 
-export default function QuestionNavigation({currentQuestionId, next, previous}) {
+export default function Navigator({currentQuestionId, next, previous}) {
     if (currentQuestionId === 1) {
         return (
             <div className="navigation">
