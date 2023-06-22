@@ -15,16 +15,11 @@ function App() {
 
 
     const next = async () => {
-        if (index < 4) {
-            fetchQuestion(index + 1, setQuestion, setIndex)
-        }
+        setIndex(index+1)
     }
     const previous = async () => {
-        if (index > 1) {
-            fetchQuestion(index - 1, setQuestion, setIndex)
-        }
+        setIndex(index-1)
     }
-
 
     return (
         <div className="App">
