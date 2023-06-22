@@ -1,9 +1,9 @@
 import './App.css';
 import React, {useEffect, useState} from "react";
-import Navigator from "./components/Navigator";
-import fetchQuestion from "./restGateway/restGateway";
-import OpenQuestion from "./components/OpenQuestion";
-import AppTopBar from "./components/AppTopBar";
+import Navigator from "./openquestions/Navigator";
+import fetchQuestion from "./restGateway/RestGateway";
+import OpenQuestion from "./openquestions/OpenQuestion";
+import AppTopBar from "./openquestions/AppTopBar";
 
 function App() {
     const [question, setQuestion] = useState({id:0, title:'', description:'', type: '', options:[]});
