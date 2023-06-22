@@ -1,8 +1,5 @@
-package nl.han.se.ans.api;
+package nl.han.se.ans.mcquestions;
 
-import nl.han.se.ans.dataaccess.MCExamQuestionRepository;
-import nl.han.se.ans.model.MCExamQuestion;
-import nl.han.se.ans.model.OpenExamQuestion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

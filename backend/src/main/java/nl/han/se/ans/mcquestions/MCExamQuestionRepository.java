@@ -1,7 +1,4 @@
-package nl.han.se.ans.dataaccess;
-
-import nl.han.se.ans.model.MCExamQuestion;
-import nl.han.se.ans.model.OpenExamQuestion;
+package nl.han.se.ans.mcquestions;
 
 import java.util.List;
 

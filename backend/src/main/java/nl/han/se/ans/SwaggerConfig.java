@@ -1,4 +1,4 @@
-package nl.han.se.ans.api;
+package nl.han.se.ans;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;

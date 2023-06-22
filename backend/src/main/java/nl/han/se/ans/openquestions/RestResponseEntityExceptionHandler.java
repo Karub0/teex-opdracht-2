@@ -1,4 +1,4 @@
-package nl.han.se.ans.api;
+package nl.han.se.ans.openquestions;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

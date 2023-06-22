@@ -1,7 +1,7 @@
-package nl.han.se.ans.api;
+package nl.han.se.ans.openquestions;
 
-import nl.han.se.ans.dataaccess.OpenExamQuestionRepository;
-import nl.han.se.ans.model.OpenExamQuestion;
+import nl.han.se.ans.openquestions.OpenExamQuestionRepository;
+import nl.han.se.ans.openquestions.OpenExamQuestion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

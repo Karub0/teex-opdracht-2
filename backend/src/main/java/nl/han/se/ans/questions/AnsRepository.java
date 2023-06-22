@@ -1,4 +1,4 @@
-package nl.han.se.ans.dataaccess;
+package nl.han.se.ans.questions;
 
 import java.util.List;
 

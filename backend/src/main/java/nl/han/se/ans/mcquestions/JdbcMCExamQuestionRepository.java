@@ -1,8 +1,5 @@
-package nl.han.se.ans.dataaccess;
+package nl.han.se.ans.mcquestions;
 
-import nl.han.se.ans.model.MCExamOption;
-import nl.han.se.ans.model.MCExamQuestion;
-import nl.han.se.ans.model.OpenExamQuestion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

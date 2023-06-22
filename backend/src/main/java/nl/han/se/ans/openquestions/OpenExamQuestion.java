@@ -1,4 +1,7 @@
-package nl.han.se.ans.model;
+package nl.han.se.ans.openquestions;
+
+import nl.han.se.ans.questions.ExamQuestion;
+import nl.han.se.ans.questions.QuestionType;
 
 public class OpenExamQuestion extends ExamQuestion {
 

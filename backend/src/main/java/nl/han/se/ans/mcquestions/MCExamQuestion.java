@@ -1,4 +1,7 @@
-package nl.han.se.ans.model;
+package nl.han.se.ans.mcquestions;
+
+import nl.han.se.ans.questions.ExamQuestion;
+import nl.han.se.ans.questions.QuestionType;
 
 import java.util.ArrayList;
 import java.util.List;

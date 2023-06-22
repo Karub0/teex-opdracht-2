@@ -1,4 +1,4 @@
-package nl.han.se.ans.model;
+package nl.han.se.ans.mcquestions;
 
 public class MCExamOption {
     private long id;

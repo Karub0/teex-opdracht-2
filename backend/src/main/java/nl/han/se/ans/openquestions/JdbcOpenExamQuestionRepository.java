@@ -1,6 +1,6 @@
-package nl.han.se.ans.dataaccess;
+package nl.han.se.ans.openquestions;
 
-import nl.han.se.ans.model.OpenExamQuestion;
+import nl.han.se.ans.openquestions.OpenExamQuestion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
