@@ -45,7 +45,15 @@ Front-end
 
 ### Container Diagram
 
+![](structurizr-1-Containers.png)
+
 ### Component Diagram
+
+![](structurizr-1-Browser-Components.png)
+
+![](structurizr-1-Load-first-question.png)
+
+![](structurizr-1-Load-next-question.png)
 
 ## Deployment
 
