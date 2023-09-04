@@ -9,8 +9,10 @@ workspace "ANSIE" "This is the model for the ANSIE application" {
         ansie = softwareSystem "ANSIE" {
             browser = container "Browser" {
                 app = component "App" "Retrieves next and previous questions and maintains state for current question"
-                openQuestion = component "OpenQuestion" "Shows the current question from the App Component and its properties"
+                openQuestion = component "OpenQuestion" "Shows the current open question from the App Component and its properties"
+                question = component "Question" "Shows the current question from the App Component and its properties"
                 navigator = component "Navigator" "Provides buttons to retrieve next and previous question based on the current question in the App component"
+                navigationButton = component "NavigationButton" "Buttons that listens to next or previous question event listener"
                 restGateway = component "REST Gateway" "Responsible for communicating with the API"
             }
             apiApplication = container "Back-end" {
@@ -31,12 +33,14 @@ workspace "ANSIE" "This is the model for the ANSIE application" {
         docent -> database "Manages exam data" "TCP/IP"
 
         # relationships to/from components
-        student -> navigator "Button clicks"
+        student -> navigationButton "Button clicks"
         student -> app "Starts application"
         app -> app "Renders"
         app -> restGateway "Uses"
         app -> openQuestion "Renders"
+        openQuestion -> question "Renders"
         app -> navigator "Renders"
+        navigator -> navigationButton "Renders multiple"
         navigator -> app "Dispatches events to"
         restGateway -> questionController "Retrieves openquestions data" "JSON / HTTP"
         questionController -> openQuestionRepository "Retrieves openquestions data"
@@ -87,7 +91,9 @@ workspace "ANSIE" "This is the model for the ANSIE application" {
                 app
                 restGateway
                 openQuestion
+                question
                 navigator
+                navigationButton
             }
             autoLayout
             description "The component diagram for the API Application."
@@ -106,18 +112,25 @@ workspace "ANSIE" "This is the model for the ANSIE application" {
             app -> restGateway "fetchQuestion(index, setQuestion, setIndex)"
             restGateway -> app "setQuestion(question)"
             app -> openQuestion "render(question)"
+            openQuestion -> question "render(question)"
             app -> navigator "render(question.id, nextEventHandler, previousEventHandler)"
+            navigator -> navigationButton "render(nextEventHandler)"
+            navigator -> navigationButton "render(previousEventHandler)"
+
             autoLayout
             description "Summarises how the question feature works in the single-page application."
         }
         dynamic browser "Load-next-question" "Summarises how the next question feature works in the single-page application." {
-            student -> navigator "nextButton clicked"
+            student -> navigationButton "nextButton clicked"
             navigator -> app "nextEventHandler()"
             app -> app "setIndex(index+1)"
             app -> restGateway "fetchQuestion(index, setQuestion, setIndex)"
             restGateway -> app "setQuestion(question)"
             app -> openQuestion "render(question)"
+            openQuestion -> question "render(question)"
             app -> navigator "render(question.id, nextEventHandler, previousEventHandler)"
+            navigator -> navigationButton "render(nextEventHandler)"
+            navigator -> navigationButton "render(previousEventHandler)"
             autoLayout
             description "Summarises how the next question feature works in the single-page application."
         }
