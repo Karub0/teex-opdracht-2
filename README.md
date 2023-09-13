@@ -72,20 +72,36 @@ Front-end
 ```npm run build```
 
 ### Configuration
-Back-end: backend/.env bevat poorten en gebruikersnaam/wachtwoord voor toegang tot de database.
+Back-end: Het .env bestand bevat poorten en gebruikersnaam/wachtwoord voor toegang tot de database. Deze worden automatisch gebruikt door docker compose. Sommigen variabelen zijn gedupliceerd in een .env bestand in de backend/src/main/resources/.env voor als je zonder docker compose gaat ontwikkelen.
 
 Front-end: Geen configuratie.
 
-## Operation and Support 
+## Operation and Support
+
+Run de hele stack met Docker Compose:
+
+```docker compose up```
+
+De verschillende componenten gebruiken elk een eigen netwerk port.
+
+| **component** | **port** |
+|---------------|----------|
+| db            | 3306     |
+| backend       | 8080     |
+| frontend      | 5173     |
 
 ### Back-end
-Run de back-end met Docker Compose:
+Run de back-end met Maven:
 
-```docker-compose up```
+```mvn spring-boot:run```
 
-Gebruik de opties ```--build --force-recreate``` om het backend image geforceerd opnieuw te laten bouwen.
+Of met Docker Compose:
+```docker compose up backend db```
 
 ### Front-end
 Run de front-end:
 
 ```npm run start```
+
+Of met Docker Compose:
+```docker compose up frontend```
