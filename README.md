@@ -83,6 +83,8 @@ Run de back-end met Docker Compose:
 
 ```docker-compose up```
 
+Gebruik de opties ```--build --force-recreate``` om het backend image geforceerd opnieuw te laten bouwen.
+
 ### Front-end
 Run de front-end:
 
