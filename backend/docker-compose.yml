@@ -16,13 +16,14 @@ services:
         target: /var/lib/mysql
     healthcheck:
       test: "healthcheck.sh --connect"
-      interval: 3s
+      interval: 2s
       timeout: 5s
-      retries: 10
-      start_period: 3s
+      retries: 20
+      start_period: 2s
   app:
     depends_on:
-      - mysqldb
+      mysqldb:
+        condition: service_healthy
     build: ./
     restart: on-failure
     env_file: .env
