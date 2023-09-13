@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   mysqldb:
-    image: mariadb:10.5.8
+    image: mariadb:10.5.22
     restart: unless-stopped
     env_file: .env
     environment:
@@ -12,7 +12,14 @@ services:
     ports:
       - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
     volumes:
-      - db:/var/lib/mysql
+      - type: tmpfs
+        target: /var/lib/mysql
+    healthcheck:
+      test: "healthcheck.sh --connect"
+      interval: 3s
+      timeout: 5s
+      retries: 10
+      start_period: 3s
   app:
     depends_on:
       - mysqldb
@@ -27,8 +34,7 @@ services:
         "spring.datasource.username" : "$MYSQLDB_USER",
         "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
         "spring.sql.init.mode" : "always",
-        "spring.datasource.initialization-mode" : "always"
-      }'
+        "spring.datasource.initialization-mode" : "always" }'
     volumes:
       - /Users/rodmidde/.m2:/root/.m2
     stdin_open: true

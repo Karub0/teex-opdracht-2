@@ -16,13 +16,13 @@ public class JdbcOpenExamQuestionRepository implements OpenExamQuestionRepositor
     @Override
     public int save(OpenExamQuestion openExamQuestion) {
         return jdbcTemplate.update("INSERT INTO openexamquestions (title, description, published) VALUES(?,?,?)",
-                new Object[] { openExamQuestion.getTitle(), openExamQuestion.getDescription(), openExamQuestion.isPublished() });
+                new Object[] { openExamQuestion.getName(), openExamQuestion.getDescription(), openExamQuestion.isPublished() });
     }
 
     @Override
     public int update(OpenExamQuestion openExamQuestion) {
         return jdbcTemplate.update("UPDATE openexamquestions SET title=?, description=?, published=? WHERE id=?",
-                new Object[] { openExamQuestion.getTitle(), openExamQuestion.getDescription(), openExamQuestion.isPublished(), openExamQuestion.getId() });
+                new Object[] { openExamQuestion.getName(), openExamQuestion.getDescription(), openExamQuestion.isPublished(), openExamQuestion.getId() });
 
     }
 
