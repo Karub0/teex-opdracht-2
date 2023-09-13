@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins ={"http://localhost:3000", "http://localhost:5173"})
 @RestController
 @RequestMapping("/api")
 public class OpenExamQuestionController {
@@ -33,7 +32,7 @@ public class OpenExamQuestionController {
         return new ResponseEntity<>(openExamQuestions, HttpStatus.OK);
 
     }
-
+    
     @GetMapping("/examQuestions/open/{id}")
     public ResponseEntity<OpenExamQuestion> getOpenExamQuestionById(@PathVariable("id") long id) {
         OpenExamQuestion openExamQuestion = openExamQuestionRepository.findById(id);
