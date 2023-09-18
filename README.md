@@ -1,13 +1,17 @@
 # Weekopdracht 2 voor de cursus TEEX
 
 ## Introduction
-De applicatie "ANSIE" betreft een prototype van een toetsapplicatie. Op dit moment is de applicatie alleen geschikt om door een aantal toetsvragen heen te navigeren die beschikbaar zijn in de back-end.  
+De applicatie "ANSIE" betreft een prototype van een toetsapplicatie. Op dit moment is de applicatie alleen geschikt om door een aantal toetsvragen heen te navigeren die beschikbaar zijn in de back-end. In deze week werk je een spike uit waarmee je antwoord probeert te krijgen op enkele vragen en een aantal risico's vermindert. 
 
 ## Context
 Je kunt behalve door de toetsvragen heen navigeren ook je antwoord invoeren. Dat antwoord wordt niet opgeslagen of onthouden maar dat is voor deze opdracht niet relevant.
 
 ## Functional Overview
-In deze applicatie staan toetsvragen centraal. De back-end ondersteunt verschillende vraag-types maar de front-end alleen open vragen. Voor de front-end kan worden uitgebreid met bijvoorbeeld multiple-choice vragen moet er kritisch gekeken worden naar het state management van de React applicatie. Op dit moment is er alleen een user-interface voor de student, docenten kunnen wel vragen toevoegen, aanpassen en verwijderen maar dat moet rechtstreeks in de database.
+In deze applicatie staan toetsvragen centraal. De back-end ondersteunt verschillende vraag-types maar de front-end alleen open vragen. 
+
+User Story: Als architect wil ik dat de front-end kan worden uitgebreid met bijvoorbeeld multiple-choice vragen waarbij er kritisch gekeken worden naar het huidige state management van de React applicatie. 
+
+Op dit moment is er alleen een user-interface voor de student, docenten kunnen wel vragen toevoegen, aanpassen en verwijderen maar dat moet rechtstreeks in de database.
 
 ## Quality Attributes
 
