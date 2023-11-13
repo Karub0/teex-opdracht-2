@@ -33,7 +33,7 @@ services:
         "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
         "spring.sql.init.mode" : "always",
         "spring.datasource.initialization-mode" : "always" }'
-    volumes: 
+    volumes:
       - mavencache:/root/.m2
     healthcheck:
       test: "curl --fail http://localhost:8080/api/examQuestions/any || exit 1"
@@ -43,7 +43,7 @@ services:
   frontend:
     build: /frontend
     # best practice for node on docker (see https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md)
-    init: true 
+    init: true
     restart: on-failure
     ports:
       - 5173:5173
