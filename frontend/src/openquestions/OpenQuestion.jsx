@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import { DataContext } from "../DataContext";
 import Question from "./Question";
 import { TextField } from "@mui/material";
 
-export default function OpenQuestion({ question }) {
+export default function OpenQuestion() {
+  const { question } = useContext(DataContext);
+
   return (
     <>
       <h4>Open vraag</h4>

@@ -1,14 +1,18 @@
+import { useContext } from "react";
+import { DataContext } from "../DataContext";
 import NavigationButton from "./NavigationButton";
 
-export default function Navigator({ currentQuestionId, next, previous }) {
-  if (currentQuestionId === 1) {
+export default function Navigator() {
+  const { question, next, previous } = useContext(DataContext);
+
+  if (question.id === 1) {
     return (
       <div className="navigation">
         <NavigationButton action={next} title="Volgende" />
       </div>
     );
   }
-  if (currentQuestionId >= 2 && currentQuestionId < 4) {
+  if (question.id >= 2 && question.id < 4) {
     return (
       <div className="navigation">
         <NavigationButton action={previous} title="Vorige" />
@@ -16,7 +20,7 @@ export default function Navigator({ currentQuestionId, next, previous }) {
       </div>
     );
   }
-  if (currentQuestionId === 4) {
+  if (question.id === 4) {
     return (
       <div className="navigation">
         <NavigationButton action={previous} title="Vorige" />
